@@ -1,5 +1,5 @@
 class PlacesController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :edit, :update]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   def index
     @places = Place.all
@@ -35,7 +35,7 @@ class PlacesController < ApplicationController
     @place = Place.update_attributes(place_params)
     redirect_to root_path
   end
-  
+
   def destroy
     @place = Place.find(params[:id])
     @place.destroy

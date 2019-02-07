@@ -19,7 +19,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 body {
-  background: image_url('knitting250px_@2X.png');
+  background: image_url('knitting250px.png');
     font-family: 'quicksandregular', sans-serif;
 }
 
@@ -83,3 +83,8 @@ body {
     }
   }
 }
+
+#map {
+      height: 300px;
+    }
+    

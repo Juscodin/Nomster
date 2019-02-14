@@ -1,10 +1,11 @@
-<div class="booyah-box col-10 offset-1"> 
+<div class="booyah-box col-10 offset-1">
+
   <h1><%= @place.name %></h1>
   <i><%= @place.address %></i>
   <br/><br/>
   <p><%= @place.description %></p>
 
-
+  
   <% if @place.latitude.present? && @place.longitude.present? %> 
 
     
@@ -92,3 +93,28 @@
 </div> 
 
 
+
+<div class="clear"></div>
+  <div class="booyah-box col-10 offset-1">
+    <%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
+    <%= f.hidden_field :place_id %>
+    <%= f.input :caption %>
+    <%= f.input :picture %>
+    <%= f.submit "Add a Picture", class: 'btn btn-primary' %>
+  </div>
+<% end %>
+
+
+
+
+
+
+<h1>Photos</h1>
+<div class="row">
+  <% @place.photos.each do |photo| %>
+  <div class="col-12 col-sm-6">
+  <%= image_tag photo.picture.url %>
+  <%= photo.caption %>
+</div>
+<% end %>
+</div>

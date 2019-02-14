@@ -9,7 +9,7 @@ before_action :authenticate_user!
 
   def show
     @place = Place.find(params[:id])
-    @photo = Photo.new
+    @photo = Photo.find(params[:id])
   end 
 
  private
